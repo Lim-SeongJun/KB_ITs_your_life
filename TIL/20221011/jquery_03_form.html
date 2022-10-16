@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // $("#join_form").on("submit",function(){})
+            $("#join_form").submit(function(){
+                // this는 form태그
+                // trim() 문자열 앞뒤 공백 삭제
+                if(this.elements["mid"].value.trim() == "")
+                    return false
+                if(this.elements["mpwd"].value.trim() == "")
+                    return false
+                if(this.elements["mpwd2"].value.trim() == "")
+                    return false
+                if(this.elements["mpwd"].value.trim() != 
+                this.elements["mpwd2"].value.trim())
+                    return false
+            })
+        })
+    </script>
+</head>
+<body>
+    
+    <h1>회원가입</h1>
+
+    <form id ="join_form"action="join.html" method="get">
+        <label>아이디 : </label>
+        <input type="text" name="mid"> <br>
+        <label>비밀번호 : </label>
+        <input type="password" name="mpwd"> <br>
+        <label>비밀번호 확인 : </label>
+        <input type="password" name="mpwd2"> <br>
+
+        <label>성별</label>
+        <input onchange="change_gender()" type="radio" name='gender' value="male" checked>남성
+        <input onchange="change_gender()" type="radio" name='gender' value="female">여성
+        <br>
+        <label>취미 : </label>
+        <input type="checkbox" name="fav" value="reading">독서
+        <input type="checkbox" name="fav" value="ps">PlayStation게임
+        <input type="checkbox" name="fav" value="Xbox">Xbox게임
+        <input type="checkbox" name="fav" value="football">축구
+        <input type="checkbox" name="fav" value="baseball">야구
+        <input type="checkbox" name="fav" value="sports">그외스포츠
+        <br>
+        <label>주요 사이트</label>
+        <select onchange="change_site(this)">
+            <option>사이트를 고르세요</option>
+            <option value="https://naver.com">네이버</option>
+            <option value="https://daum.net">다음</option>
+            <option value="https://Youtube.com">Youtube</option>
+        </select>
+        <br>
+        <input type="submit" value="회원가입">
+    </form>
+
+</body>
+</html>

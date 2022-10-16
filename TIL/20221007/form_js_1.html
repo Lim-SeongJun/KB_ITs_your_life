@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var com_num = 0
+        com_num = Math.floor(Math.random()*100)+1
+
+        window.onload = function() {
+        }
+        function show_msg(text){
+            document.querySelector("#msg").innerHTML = text
+        }
+        function append_msg(text){
+            document.querySelector("#msg").innerHTML +=text
+        }
+        function check_num(){
+            // 난수와 비교
+            var num = document.querySelector("#num")
+            var msg = ""
+            var ok_snd = document.querySelector("#ok_snd")
+            var fail_snd = document.querySelector("#fail_snd")
+            if(num.value == com_num){
+                append_msg(num.value+" 정답입니다.")
+                ok_snd.play()
+            }
+            else if(num.value < com_num){
+                append_msg(num.value+" 올려주세요<br>")
+                fail_snd.play()
+            }
+            else{
+                append_msg(num.value+" 내려주세요<br>")
+                fail_snd.play()
+            }
+            num.value = ""
+        }
+    </script>
+</head>
+<body>
+    <h1>숫자맞추기게임</h1>
+    <p>컴퓨터가 임의로 정한 숫자를 가장 작은 횟수로 맞춰보세요</p>
+    <label>1~100사이 숫자:</label><input id="num">
+    <button onclick="check_num()">정답확인</button>
+    <div id="msg"></div>
+    <audio src="ok.mp3" id="ok_snd"></audio>
+    <audio src="fail.mp3" id="fail_snd"></audio>
+</body>
+</html>

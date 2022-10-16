@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Intro</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script>
+        // var a = {} //JSON 객체
+        // var a = { 속성명1: "값1", 속성명2:"값2"}
+        function get_weather(){
+            $.ajax({
+                url:"weather.xml", // 데이터 경로
+                success: function(data){ 
+                    // 통신성공시 실행 함수, data는 서버에서 수신한 값
+                    // 수신한 것이 XML이면 자동 객체변환,
+                    // 수신한 것이 그외(html,txt)이면 문자열로 존재.
+                    var ctg = $(data).find("category").text()
+                    // 동네이름 추출,표시
+                    $("#msg").append("<h3"+ctg+"</h3>")
+                    //시간대별(<data>) 온도,날씨,습도 추출, 표시
+                    // <data> 추출, 그 안에 있는 온도, 날씨, 습도 추출
+                    var datas = $(data).find("data")
+                    $("#msg").append("<p>갯수: "+datas.length+"</p>")
+                    for(var i=0; i<datas.length;i++){
+                        var dt = $(datas[i])//<data>를 순서대로 접근
+                        var day = dt.find("day").text() // 0-오늘, 1-내일,2-모레
+                        var hour = dt.find("hour").text()
+                        var temp = dt.find("temp").text()
+                        var wfkor = dt.find("wfkor").text()
+                        var s = day+" "+hour+"시까지 "+temp+"도 "+wfkor
+                        $("#msg").append("<p>"+s+"</p>")
+                    }// end for
+                    
+                }
+            })
+        }
+        $(function(){
+            $("#weather_btn").click(function(){
+                get_weather()
+            })
+        })
+	</script>
+</head>
+
+<body>
+
+	<button id="weather_btn">날씨</button>
+	<div id="msg"></div>
+</body>
+
+</html>

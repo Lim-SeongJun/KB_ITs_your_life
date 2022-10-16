@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<style>
+  #apart {
+    top : -1200px
+  }
+</style>
+{% load static %}
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="KB 재테크 플랫폼, 회원가입이 완료되었습니다.">
+    <meta name="description" content="">
+    <title>맞춤 주거지역 확인</title>
+    <link rel="stylesheet" href="{% static '/CSS/default.css' %}" media="screen">
+<link rel="stylesheet" href="{% static '/CSS/부동산_맞춤-주거지역.css' %}" media="screen">
+<script class="u-script" type="text/javascript" src="{% static '/javascript/jquery.js'%}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static '/javascript/nicepage.js'%}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.18.5, nicepage.com">
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#59bec1">
+    <meta property="og:title" content="부동산_맞춤 주거지역">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-white u-header" id="sec-8229"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <img class="u-image u-image-contain u-image-default u-image-1" src="{% static '/images/KB1.png'%}" alt="" data-image-width="602" data-image-height="468">
+        <h1 class="u-custom-font u-text u-text-default u-text-1">
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-1" href="{% url 'home' %}">KB 재테크 플랫폼</a>
+        </h1>
+        <nav class="u-align-right u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD">
+          
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url 'home' %}" style="padding: 10px;">Home</a>
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url '부동산' %}" style="padding: 10px;">부동산</a>
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url '주식' %}" style="padding: 10px;">주식</a>
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url '적금카드' %}" style="padding: 10px;">적금/카드</a>
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url '설명회' %}" style="padding: 10px;">설명회정보</a>
+              {% if user.is_authenticated %}
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url 'my' %}" style="padding: 10px;">마이페이지</a>
+          {%else%}
+          {%endif%}{% if user.is_authenticated %}
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1"  href="{% url 'logout' %}" style="padding: 10px;">로그아웃</a>
+            {% else %}
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url 'login' %}" style="padding: 10px;">로그인</a>
+            {% endif %}
+            </li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}">Home</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url '부동산' %}">부동산</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url '주식' %}">주식</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url '적금카드' %}">적금/카드</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url '설명회' %}">설명회정보</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'my' %}">마이페이지</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}">로그인</a>
+                </li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-27ec">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-custom-font u-text u-text-default u-text-1"> 부동산 재테크</h3>
+        <br><br>
+        
+        
+        <!-- 지도1 반포자이-->
+        <div style="padding:100px 0 0 100px;">
+        
+        <div id="map2" style="width:350px;height:350px;"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9d946098d691c8ee8ae47ace57a12273"></script>
+        <script>
+
+          var mapContainer = document.getElementById('map2'), // 지도를 표시할 div 
+              mapOption = { 
+                  center: new kakao.maps.LatLng(37.5078, 127.0146), // 지도의 중심좌표
+                  level: 3 // 지도의 확대 레벨
+              };
+          
+          var map2 = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+          // 지도를 클릭한 위치에 표출할 마커입니다
+          var marker = new kakao.maps.Marker({ 
+              // 지도 중심좌표에 마커를 생성합니다 
+              position: map2.getCenter() 
+            }); 
+          // 지도에 마커를 표시합니다
+          marker.setMap(map2);
+
+          // 지도에 클릭 이벤트를 등록합니다
+          // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+          kakao.maps.event.addListener(map2, 'click', function(mouseEvent) {        
+    
+              // 클릭한 위도, 경도 정보를 가져옵니다 
+              var latlng = mouseEvent.latLng; 
+    
+              // 마커 위치를 클릭한 위치로 옮깁니다
+              marker.setPosition(latlng);
+    
+              var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+              message += '경도는 ' + latlng.getLng() + ' 입니다';
+    
+              var resultDiv = document.getElementById('clickLatlng'); 
+              resultDiv.innerHTML = message;
+    
+            });
+          </script>
+                  <br>
+                <!-- 지도2 잠실 현대아파트--> 
+                <div id="map3" style="width:350px;height:350px;"></div>
+                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9d946098d691c8ee8ae47ace57a12273"></script>
+                <script>
+        
+                  var mapContainer = document.getElementById('map3'), // 지도를 표시할 div 
+                      mapOption = { 
+                          center: new kakao.maps.LatLng(37.5041, 127.0854), // 지도의 중심좌표
+                          level: 3 // 지도의 확대 레벨
+                      };
+                  
+                  var map3 = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                  // 지도를 클릭한 위치에 표출할 마커입니다
+                  var marker = new kakao.maps.Marker({ 
+                      // 지도 중심좌표에 마커를 생성합니다 
+                      position: map3.getCenter() 
+                    }); 
+                  // 지도에 마커를 표시합니다
+                  marker.setMap(map3);
+        
+                  // 지도에 클릭 이벤트를 등록합니다
+                  // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+                  kakao.maps.event.addListener(map3, 'click', function(mouseEvent) {        
+            
+                      // 클릭한 위도, 경도 정보를 가져옵니다 
+                      var latlng = mouseEvent.latLng; 
+            
+                      // 마커 위치를 클릭한 위치로 옮깁니다
+                      marker.setPosition(latlng);
+            
+                      var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+                      message += '경도는 ' + latlng.getLng() + ' 입니다';
+            
+                      var resultDiv = document.getElementById('clickLatlng'); 
+                      resultDiv.innerHTML = message;
+            
+                    });
+                  </script>
+                <br>
+                <!-- 지도3 용산 시티파크-->
+                <div id="map4" style="width:350px;height:350px;"></div>
+                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9d946098d691c8ee8ae47ace57a12273"></script>
+                <script>
+        
+                  var mapContainer = document.getElementById('map4'), // 지도를 표시할 div 
+                      mapOption = { 
+                          center: new kakao.maps.LatLng(37.5255, 126.9689), // 지도의 중심좌표
+                          level: 3 // 지도의 확대 레벨
+                      };
+                  
+                  var map4 = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                  // 지도를 클릭한 위치에 표출할 마커입니다
+                  var marker = new kakao.maps.Marker({ 
+                      // 지도 중심좌표에 마커를 생성합니다 
+                      position: map4.getCenter() 
+                    }); 
+                  // 지도에 마커를 표시합니다
+                  marker.setMap(map4);
+        
+                  // 지도에 클릭 이벤트를 등록합니다
+                  // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+                  kakao.maps.event.addListener(map4, 'click', function(mouseEvent) {        
+            
+                      // 클릭한 위도, 경도 정보를 가져옵니다 
+                      var latlng = mouseEvent.latLng; 
+            
+                      // 마커 위치를 클릭한 위치로 옮깁니다
+                      marker.setPosition(latlng);
+            
+                      var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+                      message += '경도는 ' + latlng.getLng() + ' 입니다';
+            
+                      var resultDiv = document.getElementById('clickLatlng'); 
+                      resultDiv.innerHTML = message;
+            
+                    });
+        </script></div>
+        <div id='apart'>
+          <h3 class="u-custom-font u-text u-text-default u-text-2">나에게 알맞는 아파트</h3></div>
+        <div id="back">
+        <a href="{% url '부동산' %}" class="u-btn u-btn-round u-button-style u-radius-17 u-btn-1">뒤로가기</a>
+      </div></div>
+    </section>
+    
+    
+    
+    <footer class="u-clearfix u-footer u-grey-25" id="sec-abf8"><div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h6 class="u-text u-text-1">KB IT'S Your Life</h6>
+                  <p class="u-text u-text-2">WonJi-Jeong, JooHee-Shin, Hyein-We, SeongJun-Lim, YoungBon-Ji</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></footer>
+    
+  
+</body></html>

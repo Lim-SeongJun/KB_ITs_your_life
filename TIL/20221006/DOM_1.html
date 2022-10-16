@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 1 </title>
+    <script>
+        function show_text(){
+            // this는 이벤트 발생한 객체를 가리킴
+            var msg = document.querySelector('#msg')
+            //this.innerText는 마우스가 올라간 <H1>의 글자
+            msg.innerText = this.innerText
+        }
+        function my_load(){
+            var h1_arr = document.querySelectorAll("h1")
+            for(var i=0; i < h1_arr.length; i++){
+                h1_arr[i].onclick = show_text
+            }
+        }
+        // console.log(my_load)
+        window.onload = my_load //이벤트 핸들러등록
+        // my_load()
+    </script>
+</head>
+<body>
+    
+    <h1>Do It!</h1>
+    <h1>Do It! 2</h1>
+    <img src="" alt="공부하는 이미지">
+    <div id="msg"> </div>
+</body>
+</html>

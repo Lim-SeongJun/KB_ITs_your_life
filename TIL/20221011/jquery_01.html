@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Intro</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script>
+        $(function(){
+            //HTML 로딩완료시 자동 실행
+            $("p").click(function(){
+                //this 이벤트발생 태그-><p>
+                // this.style.color='red'; // 클릭한 <p> 색 변경
+                // $("p").css("color","red"); // 어떤 <p>를 눌러도 모든 <p> 색 변경
+                // $(this) -> this 객체를 jquery객체로 만듬
+                $(this).fadeOut(); // fadeOut : 서서히 사라지게함 hide : 사라지게함
+            })
+        })
+	</script>
+</head>
+
+<body>
+
+	<p>이제부터 제이쿼리를 다 같이 공부해보죠!!<br>
+	마우스로 글씨를 클릭해보세요!!</p>
+    <p>이제부터 제이쿼리를 다 같이 공부해보죠!!<br>
+        마우스로 글씨를 클릭해보세요!!</p>
+	
+</body>
+
+</html>

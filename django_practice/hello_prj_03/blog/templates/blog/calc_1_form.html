@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단계산기 v1</title>
+</head>
+<body>
+    <h1> 간단 계산기 v1</h1>
+    <h3>{{result}}</h3>
+    <form method="post" action="">
+        {% csrf_token %} 
+        <input type="number" name="num1" placeholder="계산 할 첫번째 숫자를 입력해주세요">
+        <select name="opr">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <input type="number" name="num2" placeholder="계산 할 두번째 숫자를 입력해주세요">
+        <input type="submit" value="계산하기">
+    </form>
+    <h1>{{msg}}</h1>
+</body>
+</html>

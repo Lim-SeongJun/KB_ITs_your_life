@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #buttons{
+            width: 360px;
+            height: 360px;
+            border: 1px solid red;
+        }
+        #buttons > button{
+            width: 35px;
+            height: 35px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        function add_buttons(){
+            var buttons = $("#buttons")
+            for(var i=1; i<=100; i++){
+                buttons.append("<button>"+i+"</button>")
+            }
+        }
+        // 1~100사이 난수 생성
+        var com_num = Math.floor(Math.random()*100)+1
+        $(function(){
+            add_buttons()
+            //이벤트 등록
+            //100개 숫자버튼 이벤트 등록
+            $("#buttons > button").click(function(){
+                // <input> -> this.value
+                // <button></button> -> this.innerText
+                $("#num").val(this.innerText)
+            })
+            $("#check_num").click(function(){
+                //정답확인
+                var num = $("#num").val()
+                var msg = ""
+                if( num == com_num){
+                    msg = "정답입니다"
+                }
+                else if( num < com_num){
+                    msg = num +" : 올려주세요"
+                    // 입력 숫자 아래는 비활성화
+                    $("#buttons > button:lt("+num+")").attr("disabled",true)
+                }
+                else{
+                    msg = num +" : 내려주세요"
+                    $("#buttons > button:gt("+(num-2)+")").attr("disabled",true)
+                }
+                $("#num").val("") // 입력숫자 삭제
+                // $("#msg").html(msg) // 메시지 덮어쓰기
+                // 태그를 맨 앞 자식으로 추가하기
+                $("#msg").prepend("<p>"+msg+"</p>") // prepend : 가장 최근 값이 가장 위로, append : 가장 최근값이 가장 아래로
+            })
+        })
+    </script>
+    <title>숫자맞추기 for jq</title>
+</head>
+<body>
+    <h1> 숫자 맞추기 for jq</h1>
+    <p>1~100사이 숫자를 맞춰보세요</p>
+    <label>숫자입력 : </label>
+    <input type="number" id="num">
+    <button id="check_num">정 답 확 인</button>
+    <!-- 버튼 100개 -->
+    <div id="buttons"></div>
+    <div id="msg"></div>
+</body>
+</html>

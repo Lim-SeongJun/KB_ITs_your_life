@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Intro</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script>
+        // var a = {} //JSON 객체
+        // var a = { 속성명1: "값1", 속성명2:"값2"}
+        function get_weather(){
+            //기존 msg내 정보 모두 삭제
+            $("#msg").empty()
+            $.ajax({
+                url:"chosun_news_all.xml", // 데이터 경로
+                success: function(data){ 
+                    // 통신성공시 실행 함수, data는 서버에서 수신한 값
+                    // 수신한 것이 XML이면 자동 객체변환,
+                    // 수신한 것이 그외(html,txt)이면 문자열로 존재.
+                    var datas = $(data).find("item")
+                    $("#msg").append("<p>갯수: "+datas.length+"</p>")
+                    for(var i=0; i<datas.length;i++){
+                        var dt = $(datas[i])//<data>를 순서대로 접근
+                        var title = dt.find("title").text() // 0-오늘, 1-내일,2-모레
+                        var link = dt.find("link").text() //기사url
+                        title = $("<a>"+title+"</a>")
+                        title.attr("href",link)
+                        // $("#msg").append(title)
+                        // $("#msg").append("<br>") //하수(초급)
+                        $("#msg").append($("<p></p>").append(title))
+
+                    }// end for
+                    
+                }
+            })
+        }
+        $(function(){
+            get_weather()
+            $("#weather_btn").click(function(){
+            get_weather()
+            })
+        })
+	</script>
+</head>
+
+<body>
+
+	<button id="weather_btn">조선일보 RSS</button>
+	<div id="msg"></div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<a href="create">등록</a><br>
+<a href="list">목록</a><br>
+
+- blog/templates/blog/create.html
+
+<form action="" method="POST">
+    {% csrf_token %}
+    게시물 제목
+    <br>
+    <input type="text" name="title" >
+    <br>
+    게시물 내용
+    <br>
+    <textarea cols="60" rows="5" name="content"></textarea>
+    <br>
+    <input type="submit" value="글 등 록">
+</form>
+
+- blog/templates/blog/blog_list.html
+
+<a href="{% url 'create' %}">등록</a> <br>
+<a href="/blog/create">등록</a> <br>
+
+{% for blog in blogs %}
+
+<hr>
+<div>
+    <div>
+        {{ blog.title }}
+        {% comment %} <a href="{% url 'update' blog.id %}">수정</a> {% endcomment %}
+        {% comment %} <a href="{% url 'delete' blog.id %}">삭제</a> {% endcomment %}
+        <a href="/blog/update/{{blog.id}}">수정</a>
+        <a href="/blog/delete/{{blog.id}}">삭제</a>
+    </div>
+    <blockquote>
+        {{ blog.content }}
+    </blockquote>
+</div>
+</div>
+{% endfor %}
+
+<hr>

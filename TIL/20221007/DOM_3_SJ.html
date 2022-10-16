@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href="https://pyscript.net/alpha/pyscipt.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script>
+        var count = 0
+        function show_count(){
+            document.querySelector('#msg').innerHTML = "<b>"+count+"<b>"
+        }
+        function increase(){
+            count++
+            show_count()
+        }
+        function decrease(){
+            count--
+            show_count()
+        }
+        // 현재 웹페이지 로딩완료시 자동실행함수등록
+        // window.onload = function(){
+        //     document.querySelector("#dec").onclick = decrease
+        // }
+        function fn_show_msg(text){
+            document.querySelector("#msg").innerHTML = text
+        }
+        function fn_img(){
+            var img = document.querySelector("#img1")
+            var src = img.getAttribute("src")
+            fn_show_msg(src)
+            img.setAttribute("src","https://imgnews.pstatic.net/image/421/2022/10/07/0006379527_003_20221007100905375.jpg?type=w647")
+        }
+        // 누를때마다 색깔변경
+        var colorIndex = 0
+        var colors = ["red","blue"]
+        function fn_change_color(){
+            var msg = document.querySelector("#msg")
+            msg.style.color = colors[colorIndex]
+            colorIndex++ // 1증가
+            colorIndex %= colors.length // 2나누기 나머지 저장
+        }
+    </script>
+</head>
+<body>
+    <py-env>
+        - numpy
+        - pandas
+        - scikit-learn
+        - matplotlib
+        - panel==0.13.1
+    </py-env>
+    <button id="inc" onclick="increase()">증가</button>
+    <button id="dec">감소</button>
+    <button id="img_btn" onclick="fn_img()">이미지 접근</button>
+    <button id="chg_btn" onclick="fn_change_color()">색깔변경</button>
+    <div id="msg"></div>
+    <img src="https://imgnews.pstatic.net/image/421/2022/10/07/0006379527_001_20221007100905300.jpg?type=w647" alt="" id="img1">
+    <script>
+        document.querySelector("#dec").onclick = decrease
+
+    </script>
+    <div>
+        <b>
+            <py-script>
+                import numpy as np
+                import pandas as pd
+                from sklearn.datasets import load_digits
+                from sklearn.neighbors import KNeighborsClassifier
+                from sklearn.model_selection import cross_val_score
+                from sklearn.model_selection import GridSearchCV
+                digits = load_digits()
+                X = digits['data']
+                y= digits['target']
+                model = KNeighborsClassifier()
+                cross_val_score(model,X,y,cv=5)
+                params = {
+                    'n_neighbors' : range(1,10),
+                }
+
+                gs = GridSearchCV(model,params).fit(X,y)
+                print(gs.best_score_)
+                print(gs.best_params_)
+                print(gs.best_estimator_)
+        </py-script>
+        </b>
+    </div>
+
+</body>
+</html>

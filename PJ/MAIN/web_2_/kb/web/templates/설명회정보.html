@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Post 6 Headline, Post 5 Headline, Post 4 Headline, Post 3 Headline, Post 2 Headline, Post 1 Headline">
+    <meta name="description" content="">
+    <title>설명회정보</title>
+    <link rel="stylesheet" href="{% static '/CSS/default.css' %}" media="screen">
+<link rel="stylesheet" href="{% static '/CSS/설명회정보.css' %}" media="screen">
+<script class="u-script" type="text/javascript" src="{% static '/javascript/jquery.js'%}" defer=""></script>
+<script class="u-script" type="text/javascript" src="{% static '/javascript/nicepage.js'%}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.18.5, nicepage.com">
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#59bec1">
+    <meta property="og:title" content="설명회정보">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-white u-header" id="sec-8229"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <img class="u-image u-image-contain u-image-default u-image-1" src="{% static '/images/KB1.png'%}" alt="" data-image-width="602" data-image-height="468">
+        <h1 class="u-custom-font u-text u-text-default u-text-1">
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-1" href="{% url 'home' %}">KB 재테크 플랫폼</a>
+        </h1>
+        <nav class="u-align-right u-menu u-menu-one-level u-offcanvas u-menu-1" data-responsive-from="MD">
+          
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url 'home' %}l" style="padding: 10px;">Home</a>
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url '부동산' %}" style="padding: 10px;">부동산</a>
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url '주식' %}" style="padding: 10px;">주식</a>
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url '적금카드' %}" style="padding: 10px;">적금/카드</a>
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url '설명회' %}" style="padding: 10px;">설명회정보</a>
+              {% if user.is_authenticated %}
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url 'my' %}" style="padding: 10px;">마이페이지</a>
+          {%else%}
+          {%endif%}{% if user.is_authenticated %}
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1"  href="{% url 'logout' %}" style="padding: 10px;">로그아웃</a>
+            {% else %}
+            </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-custom-color-1 u-text-grey-90 u-text-hover-custom-color-1" href="{% url 'login' %}" style="padding: 10px;">로그인</a>
+            {% endif %}
+            </li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}">Home</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url '부동산' %}">부동산</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url '주식' %}">주식</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url '적금카드' %}">적금/카드</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url '설명회' %}">설명회정보</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'my' %}">마이페이지</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'login' %}">로그인</a>
+                </li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-align-left u-clearfix u-white u-section-1" id="carousel_f284">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-custom-font u-text u-text-default u-text-1">재테크 설명회</h3><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
+        <div class="u-blog u-expanded-width u-blog-1">
+          <div class="u-repeater u-repeater-1"><!--blog_post-->
+            <div class="u-blog-post u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
+                <h4 class="u-custom-font u-custom-item u-text u-text-default u-text-2">
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-1" href="https://mediahub.seoul.go.kr/archives/2005517" target="_blank">KB 노후준비 콘서트</a>
+                </h4>
+                <a class="u-post-header-link" href="blog/post-5.html"><!--blog_post_image-->
+                  <img class="u-blog-control u-expanded-width u-image u-image-1" src="{% static '/images/WD.png'%}" data-image-width="372" data-image-height="351"><!--/blog_post_image-->
+                </a>
+              </div>
+            </div><!--/blog_post--><!--blog_post-->
+            <div class="u-blog-post u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
+                <h4 class="u-custom-font u-custom-item u-text u-text-default u-text-3">
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-2" href="https://www.seoulmoneyshow.com/main/main.php" target="_blank">2022 서울 머니쇼</a>
+                </h4>
+                <a class="u-post-header-link" href="blog/post-4.html"><!--blog_post_image-->
+                  <img class="u-blog-control u-expanded-width u-image u-image-2" src="{% static '/images/2022-10-02231910.png'%}" data-image-width="640" data-image-height="360"><!--/blog_post_image-->
+                </a>
+              </div>
+            </div><!--/blog_post--><!--blog_post-->
+            <div class="u-blog-post u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
+                <h4 class="u-custom-font u-custom-item u-text u-text-default u-text-4">
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-3" href="https://magazine.hankyung.com/business/article/202205249179b" target="_blank">2022 머니톡 상속톡<br>자산관리 빅 콘서트
+                  </a>
+                </h4>
+                <a class="u-post-header-link" href="blog/post-3.html"><!--blog_post_image-->
+                  <img class="u-blog-control u-expanded-width u-image u-image-3" src="{% static '/images/01.30103162.11.jpg'%}" data-image-width="629" data-image-height="552"><!--/blog_post_image-->
+                </a>
+              </div>
+            </div><!--/blog_post--><!--blog_post-->
+            <div class="u-blog-post u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4">
+                <h4 class="u-custom-font u-custom-item u-text u-text-default u-text-5">
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-4" href="https://www.youtube.com/watch?v=dtn098r6lvg" target="_blank">2022 매경과 함께하는<br>재테크 콘서트
+                  </a>
+                </h4>
+                <a class="u-post-header-link" href="blog/post-2.html"><!--blog_post_image-->
+                  <img class="u-blog-control u-expanded-width u-image u-image-4" src="{% static '/images/maxresdefault.jpg'%}" data-image-width="1280" data-image-height="720"><!--/blog_post_image-->
+                </a>
+              </div>
+            </div><!--/blog_post--><!--blog_post-->
+            <div class="u-blog-post u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-5">
+                <h4 class="u-custom-font u-custom-item u-text u-text-default u-text-6">
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-5" href="https://m.onoffmix.com/event/259818" target="_blank">2022 동아 재테크 핀테크쇼</a>
+                </h4>
+                <a class="u-post-header-link" href="blog/post-1.html"><!--blog_post_image-->
+                  <img class="u-blog-control u-expanded-width u-image u-image-5" src="{% static '/images/259818.jpg'%}" data-image-width="773" data-image-height="773"><!--/blog_post_image-->
+                </a>
+              </div>
+            </div><!--/blog_post--><!--blog_post-->
+            <div class="u-blog-post u-repeater-item">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-6">
+                <h4 class="u-custom-font u-custom-item u-text u-text-default u-text-7">
+                  <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-6" href="https://www.youtube.com/watch?v=mno04x3LdPs" target="_blank">2022 대한민국 재테크 박람회</a>
+                </h4>
+                <a class="u-post-header-link" href="blog/post.html"><!--blog_post_image-->
+                  <img class="u-blog-control u-expanded-width u-image u-image-6" src="{% static '/images/262514224_4971814879508775_4332937993841364545_n.jpg'%}" data-image-width="526" data-image-height="526"><!--/blog_post_image-->
+                </a>
+              </div>
+            </div><!--/blog_post-->
+          </div>
+        </div><!--/blog-->
+      </div>
+    </section>
+    
+    
+    
+    <footer class="u-clearfix u-footer u-grey-25" id="sec-abf8"><div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h6 class="u-text u-text-1">KB IT'S Your Life</h6>
+                  <p class="u-text u-text-2">WonJi-Jeong, JooHee-Shin, Hyein-We, SeongJun-Lim, YoungBon-Ji</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></footer>
+    
+  
+</body></html>

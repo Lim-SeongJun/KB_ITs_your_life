@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check_form(f){
+            if(f.elements[0].value == ""){
+                alert("아이디를 입력해주세요")
+                return false
+            }
+            if(f.elements[1].value == ""){
+                alert("비밀번호를 입력해주세요")
+                return false
+            }
+            if(f.elements[2].value == ""){
+                alert("비밀번호 확인을 입력해주세요")
+                return false
+            }
+            if(f.elements[1].value != f.elements[2].value){
+                alert("비밀번호와 비밀번호 확인이 틀립니다")
+                return false
+            }
+            var s = ""
+            for(var i=0;i<f.elements['fav'].length;i++){
+                s += f.elements['fav'][i].checked+" "
+            }
+            alert(s)
+            return true
+        }
+        function change_gender(){
+            var f = document.querySelector("#join_form")
+            alert(f.elements["gender"].value)
+        }
+        function change_site(src_select){
+             var idx = src_select.selectedIndex
+             var url = src_select.options[idx].value
+             alert(url)
+            window.location= url
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>회원가입</h1>
+
+    <form onsubmit="return check_form(this)" id ="join_form"action="" method="get">
+        <label>아이디 : </label>
+        <input type="text" name="mid"> <br>
+        <label>비밀번호 : </label>
+        <input type="password" name="mpwd"> <br>
+        <label>비밀번호 확인 : </label>
+        <input type="password" name="mpwd2"> <br>
+
+        <label>성별</label>
+        <input onchange="change_gender()" type="radio" name='gender' value="male" checked>남성
+        <input onchange="change_gender()" type="radio" name='gender' value="female">여성
+        <br>
+        <label>취미 : </label>
+        <input type="checkbox" name="fav" value="reading">독서
+        <input type="checkbox" name="fav" value="ps">PlayStation게임
+        <input type="checkbox" name="fav" value="Xbox">Xbox게임
+        <input type="checkbox" name="fav" value="football">축구
+        <input type="checkbox" name="fav" value="baseball">야구
+        <input type="checkbox" name="fav" value="sports">그외스포츠
+        <br>
+        <label>주요 사이트</label>
+        <select onchange="change_site(this)">
+            <option>사이트를 고르세요</option>
+            <option value="https://naver.com">네이버</option>
+            <option value="https://daum.net">다음</option>
+            <option value="https://Youtube.com">Youtube</option>
+        </select>
+        <input type="submit" value="회원가입">
+    </form>
+
+</body>
+</html>

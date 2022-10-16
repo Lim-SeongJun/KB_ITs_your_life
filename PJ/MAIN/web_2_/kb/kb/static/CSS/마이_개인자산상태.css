@@ -1,0 +1,19 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 730px;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 2.25rem;
+  font-family: ONEMobileTitle;
+  font-weight: 400;
+  margin: 38px auto 0 45px;
+}
+
+.u-section-1 .u-btn-1 {
+  margin: 568px auto 39px;
+}@font-face {
+  font-family: 'ONEMobileTitle';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/ONEMobileTitle.ttf);
+}

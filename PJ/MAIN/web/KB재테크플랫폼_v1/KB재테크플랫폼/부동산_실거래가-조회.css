@@ -1,0 +1,55 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 987px;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 2.25rem;
+  font-family: ONEMobileTitle;
+  font-weight: 400;
+  margin: 59px auto 0 45px;
+}
+
+.u-section-1 .u-form-1 {
+  height: 153px;
+  margin: 40px 18px 0 635px;
+}
+
+.u-section-1 .u-btn-2 {
+  margin: 605px auto 45px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-form-1 {
+    margin-right: 0;
+    margin-left: 453px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-form-1 {
+    margin-left: 233px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-form-1 {
+    margin-left: 53px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-form-1 {
+    margin-left: 0;
+  }
+}@font-face {
+  font-family: 'ONEMobileTitle';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/ONEMobileTitle.ttf);
+}
+#map{
+  margin-left: 40px;
+}
+#search{
+  top: -500px;
+}
