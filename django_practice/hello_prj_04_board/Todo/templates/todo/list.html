@@ -1,0 +1,18 @@
+
+<a href="{% url 'create' %}">등록</a> <br>
+<!--<a href="/todo/create">등록</a> <br>-->
+
+{% for td in td_list %}
+<hr>
+<div>
+    <div>
+        제목 : <a href="/todo/{{td.id}}">{{ td.title }}</a>
+    </div>
+    <!--<div>
+        <a href="/todo/update/{{td.id}}">수정</a>
+        <a href="/todo/delete/{{td.id}}">삭제</a>
+    </div>-->
+</div>
+{% endfor %}
+
+<hr>

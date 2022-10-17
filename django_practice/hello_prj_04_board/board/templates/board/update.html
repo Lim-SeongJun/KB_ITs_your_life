@@ -1,29 +1,13 @@
+
 <div>
-    <form action="/blog/update/{{ blog.id }}" method="post">
+    <form action="/board/update/{{ brd.id }}" method="post">
         {% csrf_token %}
         <div>
-            <input type="text" name ="title" value={{ blog.title }}>
+            <input type="text" name ="title" value="{{ brd.title }}">
             <br>
-            <textarea cols="50" rows="5" name="content">{{ blog.content }}</textarea><br>
+            <textarea cols="50" rows="5" name="content">{{ brd.content }}</textarea><br>
         </div>
         <button type="submit">수정</button>
     </form>
 </div>
 <a href="{% url 'list'  %}">목록</a>
-
-- blog/templates/blog/blog_view.html
-<div>
-
-<nav>
-	<a href="/blog">Blog</a>
-</nav>
-
-<h1>{{blog.title}}</h1>
-
-<p>{{blog.title}}</p>
-<p>{{blog.created_at}}</p>
-<blockquote>
-	{{ blog.content }}
-</blockquote>
-
-</div>

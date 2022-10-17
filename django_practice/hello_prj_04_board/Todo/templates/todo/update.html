@@ -1,0 +1,13 @@
+
+<div>
+    <form action="/todo/update/{{ td.id }}" method="post">
+        {% csrf_token %}
+        <div>
+            <input type="text" name ="title" value="{{ td.title }}">
+            <br>
+            <textarea cols="50" rows="5" name="content">{{ td.content }}</textarea><br>
+        </div>
+        <button type="submit">수정</button>
+    </form>
+</div>
+<a href="{% url 'list'  %}">목록</a>

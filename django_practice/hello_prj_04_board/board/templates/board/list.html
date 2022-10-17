@@ -1,0 +1,21 @@
+
+<a href="{% url 'create' %}">등록</a> <br>
+<a href="/board/create">등록</a> <br>
+
+{% for brd in brd_list %}
+<hr>
+<div>
+    <div>
+        제목 : <a href="/board/{{brd.id}}">{{ brd.title }}</a>
+    </div>
+    <blockquote>
+        {{ brd.content }}
+    </blockquote>
+    <div>
+        <a href="/board/update/{{brd.id}}">수정</a>
+        <a href="/board/delete/{{brd.id}}">삭제</a>
+    </div>
+</div>
+{% endfor %}
+
+<hr>
