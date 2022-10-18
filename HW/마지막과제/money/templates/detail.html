@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>용돈 수입지출 상세</title>
+</head>
+<body>
+    <h1>용돈 상세</h1>
+    Title : {{object.title}} <br>
+    Money : {{object.money}}원 <br>
+    <hr>
+    <a href="{% url 'list' %}">목록으로 가기</a> <br>
+    <a href="{% url 'main' %}">홈으로 가기</a>
+
+</body>
+</html>

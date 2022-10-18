@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Detail</title>
+</head>
+<body>
+    <h1>Article Detail</h1>
+    Title : {{object.title}} <br>
+    Content : <pre>{{object.content}}</pre>
+    <hr>
+    <a href="{% url 'create' %}">article 등록</a> <br>
+    <a href="{% url 'list' %}">article 목록</a> <br>
+
+</body>
+</html>

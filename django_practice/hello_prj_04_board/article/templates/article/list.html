@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article List</title>
+</head>
+<body>
+    <h1>Article List</h1>
+    <a href="{% url 'create' %}">article 등록</a> <br>
+    <hr>
+    {% for ar in object_list %}
+    <hr>
+    <h3>{{ar.title}} <a href="{% url 'detail' ar.pk %}">상세보기</a> </h3>
+    {% endfor %}
+
+</body>
+</html>

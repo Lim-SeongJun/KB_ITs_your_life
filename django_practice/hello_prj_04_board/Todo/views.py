@@ -3,9 +3,11 @@ from .models import Todo
 # Create your views here.
 
 def Todo_index(request):
-    #필요한 작업코드작성
-    #html에 표시할 데이터는 사전타입의 context에 저장
-    ctx = {"msg":"Welcome 장고"}
+    todo_count = len(Todo.objects.all())
+    ctx={
+        "msg":"Hello Todo",
+        "todo_count":todo_count,
+    }
     return render(request,"Todo/index.html",ctx)
 
 def Todo_list(request):

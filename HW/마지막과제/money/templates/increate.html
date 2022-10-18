@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>할일관리</title>
+    <title>용돈 수입 등록</title>
 </head>
 <body>
-    <h1>Todo</h1>
-    <p>msg : {{msg}}</p>
-
-    <a href="create">할일등록</a> <br>
-    <a href="list">할일목록</a> <br>
-
+    <h1>용돈 수입 등록</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="저장">
+    </form>
 </body>
 </html>
